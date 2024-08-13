@@ -1,0 +1,59 @@
+# $ eksctl create cluster -f cluster.yaml
+# $ eksctl create nodegroup -f cluster.yaml
+# $ eksctl create iamserviceaccount -f cluster.yaml --approve
+# $ eksctl create accessentry -f cluster.yaml
+# $ eksctl create addon -f cluster.yaml
+# Reference: https://eksctl.io/usage/schema/
+
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: core-services-dev
+  region: us-east-1
+
+iam:
+  withOIDC: true
+  serviceAccounts:
+  - metadata:
+      name: user-service-account
+    attachPolicyARNs:
+    - "arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess"
+    - "arn:aws:iam::aws:policy/AmazonRDSFullAccess"
+    roleName: user-service-role
+  - metadata:
+      name: user-service-db-account
+    attachPolicyARNs:
+    - "arn:aws:iam::aws:policy/AmazonRDSFullAccess"
+    roleName: user-service-db-role
+  - metadata:
+      namespace: amazon-cloudwatch
+      name: cloudwatch-agent
+    attachPolicyARNs:
+    - "arn:aws:iam::aws:policy/CloudWatchAgentServerPolicy"
+    roleName: core-services-dev-cloudwatch-role
+
+addons:
+  - name: amazon-cloudwatch-observability
+    serviceAccountRoleARN: arn:aws:iam::964200069540:role/core-services-dev-cloudwatch-role
+
+accessConfig:
+  accessEntries:
+    - principalARN: arn:aws:iam::964200069540:role/user-service-builder-role
+      type: STANDARD
+      accessPolicies:
+        - policyARN: arn:aws:eks::aws:cluster-access-policy/AmazonEKSAdminPolicy
+          accessScope:
+            type: namespace
+            namespaces:
+              - default
+
+managedNodeGroups:
+  - name: core-services-dev-node-group
+    labels: { role: services }
+    instanceType: t2.medium
+    desiredCapacity: 2
+    minSize: 2
+    maxSize: 3
+    volumeSize: 50
+    privateNetworking: true
