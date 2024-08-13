@@ -8,7 +8,7 @@
 1. Run `gcloud iam service-accounts create core-services-cluster-builder`
 1. Run `gcloud projects add-iam-policy-binding phading-dev --member='serviceAccount:core-services-cluster-builder@phading-dev.iam.gserviceaccount.com' --role='roles/cloudbuild.builds.builder' --condition=None`, replacing `phading-dev` with `phading-prod`, if for prod env.
 1. Go to cloud build and set up a new trigger. In source, it asks to set up a GitHub connection. Name it as `phading-dev`, choose the region `us-west-2`. Choose to install it in a new account `phading-dev`.
-1. Name it as `core-services-cluster-builder`. Choose region in `us-west-2`. In event, choose `manual invocation`.  In source, choose the repo `core_services_cluster` and rename it manually as `core_services`. In configuration, choose `cloud build configuration file` and location as `Repository`. Then create.
+1. Name it as `core-services-cluster-builder`. Choose region in `us-west-2`. In event, choose `manual invocation`.  In source, choose the repo `core_services_cluster` and rename it manually as `core_services_cluster`. In configuration, choose `cloud build configuration file` and location as `Repository`. Use the service account created above. Then create.
 
 1. Run `gcloud compute addresses create core-services-ip --global --ip-version IPV4`
 1. Manually run the build.

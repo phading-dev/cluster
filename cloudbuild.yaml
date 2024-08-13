@@ -1,5 +1,8 @@
 steps:
 - name: 'gcr.io/cloud-builders/kubectl'
   args: ['apply', '-f', 'ingress.yaml']
+  env:
+  - 'CLOUDSDK_COMPUTE_REGION=us-west1'
+  - 'CLOUDSDK_CONTAINER_CLUSTER=core-services'
 options:
   logging: CLOUD_LOGGING_ONLY
