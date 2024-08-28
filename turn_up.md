@@ -14,4 +14,4 @@
 1. Run `gcloud compute addresses create core-services-ip --global --ip-version IPV4`
 1. Manually run the build.
 
-1. Run `gcloud spanner instances create core-services-db --description=core-services-db --config=regional-us-east1 --nodes=1` for dev, and `gcloud spanner instances create core-services-db --description=core-services-db --config=nam6 --nodes=3` for prod.
+1. Run `gcloud spanner instances create core-services-db --description=core-services-db --config=regional-us-east1 --processing-units=100` for dev, and `gcloud spanner instances create core-services-db --description=core-services-db --config=nam6 --nodes=3` for prod.
