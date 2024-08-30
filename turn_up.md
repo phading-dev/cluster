@@ -16,4 +16,4 @@
 
 1. Run `gcloud spanner instances create core-services-db --description=core-services-db --config=regional-us-east1 --processing-units=100` for dev, and `gcloud spanner instances create core-services-db --description=core-services-db --config=nam6 --nodes=3` for prod.
 
-1. (Optional) After a Docker image is pushed. Go to "Artifact Registry" -> "Repositories" -> "gcr.io", and click "Edit repository" to add a cleanup policy, which is to delete untagged images older than 1 month.
+1. (Optional) After a Docker image is pushed, go to "Artifact Registry" -> "Repositories" -> "gcr.io" and click "Edit repository" to add a cleanup policy, which is to delete untagged images older than 1 month.
