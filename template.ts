@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 import fs = require("fs");
-import { spawnSync } from "child_process";
 import "./environment";
 
 let turnupTemplate = `# GCP auth
@@ -14,7 +13,7 @@ gcloud compute addresses create ${globalThis.CLUSTER_EXTERNAL_IP_NAME} --global 
 gcloud compute addresses create ${globalThis.CLUSTER_INTERNAL_IP_NAME} --region=${globalThis.CLUSTER_REGION} --subnet=projects/${globalThis.PROJECT_ID}/regions/${globalThis.CLUSTER_REGION}/subnetworks/default --purpose=GCE_ENDPOINT
 
 # GKE cluster
-gcloud container clusters create-auto "${globalThis.CLUSTER_NAME}" --region "${globalThis.CLUSTER_REGION}" --release-channel "regular" --network "projects/${globalThis.PROJECT_ID}/global/networks/default" --subnetwork "projects/${globalThis.PROJECT_ID}/regions/${CLUSTER_REGION}/subnetworks/default" --cluster-ipv4-cidr "/17" --binauthz-evaluation-mode=DISABLED
+gcloud container clusters create-auto "${globalThis.CLUSTER_NAME}" --region "${globalThis.CLUSTER_REGION}" --release-channel "regular" --network "projects/${globalThis.PROJECT_ID}/global/networks/default" --subnetwork "projects/${globalThis.PROJECT_ID}/regions/${globalThis.CLUSTER_REGION}/subnetworks/default" --cluster-ipv4-cidr "/17" --binauthz-evaluation-mode=DISABLED
 
 # Create a proxy-only subnet for internal load balancer
 gcloud compute networks subnets create proxy-only-subnet --purpose=REGIONAL_MANAGED_PROXY --role=ACTIVE --region=${globalThis.CLUSTER_REGION} --network=default --range=10.0.0.0/23
@@ -25,8 +24,8 @@ gcloud spanner instances create ${globalThis.BALANCED_DB_INSTANCE_ID} --config=$
 `;
 
 function main() {
-  fs.writeFileSync("turnup_gen.sh", turnupTemplate);
-  spawnSync("bash", ["turnup_gen.sh"], { stdio: "inherit" });
+  let suffix = process.argv[2];
+  fs.writeFileSync(`turnup_${suffix}.sh`, turnupTemplate);
 }
 
 main();
