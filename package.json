@@ -1,0 +1,28 @@
+{
+  "name": "@phading/cluster",
+  "version": "0.1.0",
+  "description": "GKE cluster",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/phading-dev/cluster.git"
+  },
+  "author": "Yuxuan Xie <ykuyo.dev@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/phading-dev/cluster/issues"
+  },
+  "homepage": "https://github.com/phading-dev/cluster#readme",
+  "files": [
+    "environment*.js",
+    "environment*.d.ts"
+  ],
+  "devDependencies": {
+    "@selfage/bundler_cli": "^5.3.0",
+    "@selfage/cli": "^5.0.1",
+    "@selfage/generator_cli": "^4.1.0",
+    "@selfage/tsconfig": "^1.0.7",
+    "@types/node": "^22.1.0",
+    "commander": "^13.1.0",
+    "typescript": "^5.7.2"
+  }
+}
