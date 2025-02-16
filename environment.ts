@@ -1,4 +1,5 @@
 declare var PROJECT_ID: string;
+declare var PROJECT_NUMBER: string;
 declare var CLUSTER_REGION: string;
 declare var CLUSTER_NAME: string;
 declare var CLUSTER_EXTERNAL_IP_NAME: string;
