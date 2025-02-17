@@ -20,6 +20,7 @@ gcloud compute networks subnets create proxy-only-subnet --purpose=REGIONAL_MANA
 gcloud compute firewall-rules create allow-proxy-connection --allow=TCP:0-65535 --source-ranges=10.0.0.0/23 --network=default
 
 # Create Spanner instance
+gcloud spanner instances create ${globalThis.HIGH_READ_DB_INSTANCE_ID} --config=${globalThis.DB_REGION} --description=${globalThis.HIGH_READ_DB_INSTANCE_ID} --edition=STANDARD --processing-units=100
 gcloud spanner instances create ${globalThis.BALANCED_DB_INSTANCE_ID} --config=${globalThis.DB_REGION} --description=${globalThis.BALANCED_DB_INSTANCE_ID} --edition=STANDARD --processing-units=100
 `;
 
