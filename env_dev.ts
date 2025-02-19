@@ -1,14 +1,9 @@
-import "./env";
+import { CLUSTER_ENV_VARS } from "./env";
 
-globalThis.PROJECT_ID = "phading-dev";
-globalThis.PROJECT_NUMBER = "178489203789";
-globalThis.CLUSTER_REGION = "us-central1";
-globalThis.CLUSTER_NAME = "phading-cluster";
-globalThis.CLUSTER_EXTERNAL_IP_NAME = "phading-cluster-external-ip";
-globalThis.CLUSTER_INTERNAL_IP_NAME = "phading-cluster-internal-ip";
-globalThis.HIGH_READ_DB_INSTANCE_ID = "high-read-db-instance";
-globalThis.BALANCED_DB_INSTANCE_ID = "balanced-db-instance";
-globalThis.DB_REGION = "regional-us-central1";
-globalThis.SECRET_BUCKET_NAME = "phading-dev-secrets";
-globalThis.TIMEZONE_NEGATIVE_OFFSET = 8;
-globalThis.BUSINESS_REGION = "USA";
+CLUSTER_ENV_VARS.projectId = "phading-dev";
+CLUSTER_ENV_VARS.projectNumber = "178489203789";
+CLUSTER_ENV_VARS.clusterRegion = "us-central1";
+CLUSTER_ENV_VARS.dbRegion = "regional-us-central1";
+CLUSTER_ENV_VARS.secretBucketName = "phading-dev-secrets";
+CLUSTER_ENV_VARS.timezoneNegativeOffset = 8;
+CLUSTER_ENV_VARS.businessRegion = "USA";

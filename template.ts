@@ -1,27 +1,28 @@
 #!/usr/bin/env node
 import fs = require("fs");
-import "./environment";
+import { CLUSTER_CONST_VARS } from "./const";
+import { CLUSTER_ENV_VARS } from "./env";
 
 let turnupTemplate = `# GCP auth
 gcloud auth application-default login
-gcloud config set project ${globalThis.PROJECT_ID}
+gcloud config set project ${CLUSTER_ENV_VARS.projectId}
 
 # External IP address
-gcloud compute addresses create ${globalThis.CLUSTER_EXTERNAL_IP_NAME} --global --ip-version IPV4
+gcloud compute addresses create ${CLUSTER_CONST_VARS.clusterExternalIpName} --global --ip-version IPV4
 
 # Internal IP address
-gcloud compute addresses create ${globalThis.CLUSTER_INTERNAL_IP_NAME} --region=${globalThis.CLUSTER_REGION} --subnet=projects/${globalThis.PROJECT_ID}/regions/${globalThis.CLUSTER_REGION}/subnetworks/default --purpose=GCE_ENDPOINT
+gcloud compute addresses create ${CLUSTER_CONST_VARS.clusterInternalIpName} --region=${CLUSTER_ENV_VARS.clusterRegion} --subnet=projects/${CLUSTER_ENV_VARS.projectId}/regions/${CLUSTER_ENV_VARS.clusterRegion}/subnetworks/default --purpose=GCE_ENDPOINT
 
 # GKE cluster
-gcloud container clusters create-auto "${globalThis.CLUSTER_NAME}" --region "${globalThis.CLUSTER_REGION}" --release-channel "regular" --network "projects/${globalThis.PROJECT_ID}/global/networks/default" --subnetwork "projects/${globalThis.PROJECT_ID}/regions/${globalThis.CLUSTER_REGION}/subnetworks/default" --cluster-ipv4-cidr "/17" --binauthz-evaluation-mode=DISABLED
+gcloud container clusters create-auto "${CLUSTER_CONST_VARS.clusterName}" --region "${CLUSTER_ENV_VARS.clusterRegion}" --release-channel "regular" --network "projects/${CLUSTER_ENV_VARS.projectId}/global/networks/default" --subnetwork "projects/${CLUSTER_ENV_VARS.projectId}/regions/${CLUSTER_ENV_VARS.clusterRegion}/subnetworks/default" --cluster-ipv4-cidr "/17" --binauthz-evaluation-mode=DISABLED
 
 # Create a proxy-only subnet for internal load balancer
-gcloud compute networks subnets create proxy-only-subnet --purpose=REGIONAL_MANAGED_PROXY --role=ACTIVE --region=${globalThis.CLUSTER_REGION} --network=default --range=10.0.0.0/23
+gcloud compute networks subnets create proxy-only-subnet --purpose=REGIONAL_MANAGED_PROXY --role=ACTIVE --region=${CLUSTER_ENV_VARS.clusterRegion} --network=default --range=10.0.0.0/23
 gcloud compute firewall-rules create allow-proxy-connection --allow=TCP:0-65535 --source-ranges=10.0.0.0/23 --network=default
 
 # Create Spanner instance
-gcloud spanner instances create ${globalThis.HIGH_READ_DB_INSTANCE_ID} --config=${globalThis.DB_REGION} --description=${globalThis.HIGH_READ_DB_INSTANCE_ID} --edition=STANDARD --processing-units=100
-gcloud spanner instances create ${globalThis.BALANCED_DB_INSTANCE_ID} --config=${globalThis.DB_REGION} --description=${globalThis.BALANCED_DB_INSTANCE_ID} --edition=STANDARD --processing-units=100
+gcloud spanner instances create ${CLUSTER_CONST_VARS.highReadDbInstanceId} --config=${CLUSTER_ENV_VARS.dbRegion} --description=${CLUSTER_CONST_VARS.highReadDbInstanceId} --edition=STANDARD --processing-units=100
+gcloud spanner instances create ${CLUSTER_CONST_VARS.balancedDbInstanceId} --config=${CLUSTER_ENV_VARS.dbRegion} --description=${CLUSTER_CONST_VARS.balancedDbInstanceId} --edition=STANDARD --processing-units=100
 `;
 
 function main() {
