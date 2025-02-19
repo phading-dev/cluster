@@ -1,4 +1,4 @@
-declare interface ClusterEnvVars {
+export interface ClusterEnvVars {
   projectId?: string;
   projectNumber?: string;
   clusterName?: string;
