@@ -1,4 +1,4 @@
-import "./environment";
+import "./env";
 
 globalThis.PROJECT_ID = "phading-dev";
 globalThis.PROJECT_NUMBER = "178489203789";
