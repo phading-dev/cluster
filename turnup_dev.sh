@@ -18,3 +18,6 @@ gcloud compute firewall-rules create allow-proxy-connection --allow=TCP:0-65535 
 # Create Spanner instance
 gcloud spanner instances create high-read-db-instance --config=regional-us-central1 --description=high-read-db-instance --edition=STANDARD --processing-units=100
 gcloud spanner instances create balanced-db-instance --config=regional-us-central1 --description=balanced-db-instance --edition=STANDARD --processing-units=100
+
+# Create GCS bucket
+gcloud storage buckets create gs://phading-dev-secrets --location=us-central1 --uniform-bucket-level-access

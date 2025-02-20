@@ -22,6 +22,9 @@ gcloud compute firewall-rules create allow-proxy-connection --allow=TCP:0-65535 
 # Create Spanner instance
 gcloud spanner instances create ${CLUSTER_ENV_VARS.highReadDbInstanceId} --config=${CLUSTER_ENV_VARS.dbRegion} --description=${CLUSTER_ENV_VARS.highReadDbInstanceId} --edition=STANDARD --processing-units=100
 gcloud spanner instances create ${CLUSTER_ENV_VARS.balancedDbInstanceId} --config=${CLUSTER_ENV_VARS.dbRegion} --description=${CLUSTER_ENV_VARS.balancedDbInstanceId} --edition=STANDARD --processing-units=100
+
+# Create GCS bucket
+gcloud storage buckets create gs://${CLUSTER_ENV_VARS.gcsSecretBucketName} --location=${CLUSTER_ENV_VARS.clusterRegion} --uniform-bucket-level-access
 `;
 
 function main() {
