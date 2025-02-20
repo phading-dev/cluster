@@ -11,6 +11,8 @@ export interface ClusterEnvVars {
   secretBucketName?: string;
   timezoneNegativeOffset?: number;
   businessRegion?: string;
+  externalOrigin?: string;
+  internalOrigin?: string;
 }
 
 export let CLUSTER_ENV_VARS: ClusterEnvVars = {};
