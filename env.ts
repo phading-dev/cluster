@@ -8,7 +8,10 @@ export interface ClusterEnvVars {
   highReadDbInstanceId?: string;
   balancedDbInstanceId?: string;
   dbRegion?: string;
-  secretBucketName?: string;
+  gcsSecretBucketName?: string;
+  cloudflareAccountIdFile?: string;
+  cloudflareR2AccessKeyIdFile?: string;
+  cloudflareR2SecretAccessKeyFile?: string;
   timezoneNegativeOffset?: number;
   businessRegion?: string;
   externalOrigin?: string;
