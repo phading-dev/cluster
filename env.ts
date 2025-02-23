@@ -5,9 +5,9 @@ export interface ClusterEnvVars {
   clusterRegion?: string;
   clusterExternalIpName?: string;
   clusterInternalIpName?: string;
-  highReadDbInstanceId?: string;
-  balancedDbInstanceId?: string;
-  dbRegion?: string;
+  highReadSpannerInstanceId?: string;
+  balancedSpannerInstanceId?: string;
+  spannerRegion?: string;
   gcsSecretBucketName?: string;
   cloudflareAccountIdFile?: string;
   cloudflareR2AccessKeyIdFile?: string;

@@ -20,11 +20,8 @@ gcloud compute networks subnets create proxy-only-subnet --purpose=REGIONAL_MANA
 gcloud compute firewall-rules create allow-proxy-connection --allow=TCP:0-65535 --source-ranges=10.0.0.0/23 --network=default
 
 # Create Spanner instance
-gcloud spanner instances create ${CLUSTER_ENV_VARS.highReadDbInstanceId} --config=${CLUSTER_ENV_VARS.dbRegion} --description=${CLUSTER_ENV_VARS.highReadDbInstanceId} --edition=STANDARD --processing-units=100
-gcloud spanner instances create ${CLUSTER_ENV_VARS.balancedDbInstanceId} --config=${CLUSTER_ENV_VARS.dbRegion} --description=${CLUSTER_ENV_VARS.balancedDbInstanceId} --edition=STANDARD --processing-units=100
-
-# Create GCS bucket
-gcloud storage buckets create gs://${CLUSTER_ENV_VARS.gcsSecretBucketName} --location=${CLUSTER_ENV_VARS.clusterRegion} --uniform-bucket-level-access
+gcloud spanner instances create ${CLUSTER_ENV_VARS.highReadSpannerInstanceId} --config=${CLUSTER_ENV_VARS.spannerRegion} --description=${CLUSTER_ENV_VARS.highReadSpannerInstanceId} --edition=STANDARD --processing-units=100
+gcloud spanner instances create ${CLUSTER_ENV_VARS.balancedSpannerInstanceId} --config=${CLUSTER_ENV_VARS.spannerRegion} --description=${CLUSTER_ENV_VARS.balancedSpannerInstanceId} --edition=STANDARD --processing-units=100
 `;
 
 function main() {
