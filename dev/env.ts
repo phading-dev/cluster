@@ -1,5 +1,5 @@
-import { CLUSTER_ENV_VARS } from "./env";
-import "./env_const";
+import { CLUSTER_ENV_VARS } from "../env_vars";
+import "../env_const";
 
 CLUSTER_ENV_VARS.projectId = "phading-dev";
 CLUSTER_ENV_VARS.projectNumber = "178489203789";

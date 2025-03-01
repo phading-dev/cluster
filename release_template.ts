@@ -1,6 +1,5 @@
-#!/usr/bin/env node
 import fs = require("fs");
-import { CLUSTER_ENV_VARS } from "./env";
+import { CLUSTER_ENV_VARS } from "./env_vars";
 
 let turnupTemplate = `# GCP auth
 gcloud auth application-default login
@@ -24,9 +23,6 @@ gcloud spanner instances create ${CLUSTER_ENV_VARS.highReadSpannerInstanceId} --
 gcloud spanner instances create ${CLUSTER_ENV_VARS.balancedSpannerInstanceId} --config=${CLUSTER_ENV_VARS.spannerRegion} --description=${CLUSTER_ENV_VARS.balancedSpannerInstanceId} --edition=STANDARD --processing-units=100
 `;
 
-function main() {
-  let suffix = process.argv[2];
-  fs.writeFileSync(`turnup_${suffix}.sh`, turnupTemplate);
+export function generate(env: string) {
+  fs.writeFileSync(`${env}/turnup.sh`, turnupTemplate);
 }
-
-main();

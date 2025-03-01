@@ -1,4 +1,4 @@
-import { CLUSTER_ENV_VARS } from "./env";
+import { CLUSTER_ENV_VARS } from "./env_vars";
 
 CLUSTER_ENV_VARS.clusterName = "phading-cluster";
 CLUSTER_ENV_VARS.clusterExternalIpName = "phading-cluster-external-ip";
