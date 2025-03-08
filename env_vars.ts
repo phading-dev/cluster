@@ -7,6 +7,9 @@ export interface ClusterEnvVars {
   clusterInternalIpName?: string;
   highReadSpannerInstanceId?: string;
   balancedSpannerInstanceId?: string;
+  bigtableInstanceId?: string;
+  bigtableClusterId?: string;
+  bigtableZone?: string;
   spannerRegion?: string;
   gcsSecretBucketName?: string;
   cloudflareAccountIdFile?: string;
