@@ -5,7 +5,6 @@ export interface ClusterEnvVars {
   clusterRegion?: string;
   clusterExternalIpName?: string;
   clusterInternalIpName?: string;
-  highReadSpannerInstanceId?: string;
   balancedSpannerInstanceId?: string;
   bigtableInstanceId?: string;
   bigtableClusterId?: string;

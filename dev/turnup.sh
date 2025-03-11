@@ -16,5 +16,7 @@ gcloud compute networks subnets create proxy-only-subnet --purpose=REGIONAL_MANA
 gcloud compute firewall-rules create allow-proxy-connection --allow=TCP:0-65535 --source-ranges=10.0.0.0/23 --network=default
 
 # Create Spanner instance
-gcloud spanner instances create high-read-db-instance --config=regional-us-central1 --description=high-read-db-instance --edition=STANDARD --processing-units=100
 gcloud spanner instances create balanced-db-instance --config=regional-us-central1 --description=balanced-db-instance --edition=STANDARD --processing-units=100
+
+# Create Bigtable instance
+cbt -project phading-dev createinstance single-instance "single-instance" single-cluster-c1 us-central1-a 1 SSD
