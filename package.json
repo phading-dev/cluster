@@ -17,9 +17,8 @@
     "**/env*.d.ts"
   ],
   "devDependencies": {
-    "@selfage/bundler_cli": "^5.3.0",
-    "@selfage/cli": "^5.0.1",
-    "@selfage/generator_cli": "^4.1.0",
+    "@selfage/cli": "^5.0.3",
+    "@selfage/generator_cli": "^4.3.8",
     "@selfage/tsconfig": "^1.0.7",
     "@types/node": "^22.1.0",
     "typescript": "^5.7.2"
