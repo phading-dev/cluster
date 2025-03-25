@@ -7,6 +7,7 @@ CLUSTER_ENV_VARS.clusterRegion = "us-central1";
 CLUSTER_ENV_VARS.spannerRegion = "regional-us-central1";
 CLUSTER_ENV_VARS.gcsSecretBucketName = "phading-dev-secrets";
 CLUSTER_ENV_VARS.timezoneNegativeOffset = 8;
+CLUSTER_ENV_VARS.timezoneIdentifier = "Pacific/Pitcairn";
 CLUSTER_ENV_VARS.businessRegion = "USA";
 CLUSTER_ENV_VARS.externalDomain = "dev.phading.org";
 CLUSTER_ENV_VARS.externalOrigin = "https://" + CLUSTER_ENV_VARS.externalDomain;
