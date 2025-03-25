@@ -16,6 +16,7 @@ export interface ClusterEnvVars {
   cloudflareR2SecretAccessKeyFile?: string;
   timezoneNegativeOffset?: number;
   businessRegion?: string;
+  externalDomain?: string;
   externalOrigin?: string;
   internalOrigin?: string;
 }
