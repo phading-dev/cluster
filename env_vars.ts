@@ -17,6 +17,7 @@ export interface ClusterEnvVars {
   timezoneNegativeOffset?: number;
   timezoneIdentifier?: string;
   businessRegion?: string;
+  defaultCurrency?: string;
   externalDomain?: string;
   externalOrigin?: string;
   internalOrigin?: string;
