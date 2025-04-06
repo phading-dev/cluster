@@ -13,3 +13,4 @@ CLUSTER_ENV_VARS.defaultCurrency = "USD";
 CLUSTER_ENV_VARS.externalDomain = "dev.phading.org";
 CLUSTER_ENV_VARS.externalOrigin = "https://" + CLUSTER_ENV_VARS.externalDomain;
 CLUSTER_ENV_VARS.internalOrigin = "http://127.0.0.1"; // Updated after cluster creation
+CLUSTER_ENV_VARS.contactEmail = "contact-dev@phading.org";

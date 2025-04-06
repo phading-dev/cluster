@@ -21,6 +21,7 @@ export interface ClusterEnvVars {
   externalDomain?: string;
   externalOrigin?: string;
   internalOrigin?: string;
+  contactEmail?: string;
 }
 
 export let CLUSTER_ENV_VARS: ClusterEnvVars = {};
