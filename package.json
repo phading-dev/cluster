@@ -1,6 +1,6 @@
 {
   "name": "@phading/cluster",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "GKE cluster",
   "repository": {
     "type": "git",
@@ -18,7 +18,7 @@
   ],
   "devDependencies": {
     "@selfage/cli": "^5.0.3",
-    "@selfage/generator_cli": "^4.3.8",
+    "@selfage/generator_cli": "^4.3.11",
     "@selfage/tsconfig": "^1.0.7",
     "@types/node": "^22.1.0",
     "typescript": "^5.7.2"
