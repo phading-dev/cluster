@@ -6,7 +6,7 @@ export interface ClusterEnvVars {
   clusterExternalIpName?: string;
   clusterInternalIpName?: string;
   balancedSpannerInstanceId?: string;
-  bigtableInstanceId?: string;
+  singleBigtableInstanceId?: string;
   bigtableClusterId?: string;
   bigtableZone?: string;
   spannerRegion?: string;

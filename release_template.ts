@@ -23,7 +23,7 @@ gcloud compute firewall-rules create allow-proxy-connection --allow=TCP:0-65535 
 gcloud spanner instances create ${CLUSTER_ENV_VARS.balancedSpannerInstanceId} --config=${CLUSTER_ENV_VARS.spannerRegion} --description=${CLUSTER_ENV_VARS.balancedSpannerInstanceId} --edition=ENTERPRISE --processing-units=100
 
 # Create Bigtable instance
-cbt -project ${CLUSTER_ENV_VARS.projectId} createinstance ${CLUSTER_ENV_VARS.bigtableInstanceId} "${CLUSTER_ENV_VARS.bigtableInstanceId}" ${CLUSTER_ENV_VARS.bigtableClusterId} ${CLUSTER_ENV_VARS.bigtableZone} 1 SSD
+cbt -project ${CLUSTER_ENV_VARS.projectId} createinstance ${CLUSTER_ENV_VARS.singleBigtableInstanceId} "${CLUSTER_ENV_VARS.singleBigtableInstanceId}" ${CLUSTER_ENV_VARS.bigtableClusterId} ${CLUSTER_ENV_VARS.bigtableZone} 1 SSD
 `;
   fs.writeFileSync(`${env}/turnup.sh`, turnupTemplate);
 }
