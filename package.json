@@ -1,6 +1,6 @@
 {
   "name": "@phading/cluster",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "GKE cluster",
   "repository": {
     "type": "git",
