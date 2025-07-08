@@ -18,6 +18,7 @@ export interface ClusterEnvVars {
   timezoneIdentifier?: string;
   businessRegion?: string;
   defaultCurrency?: string;
+  initCreditAmount?: number;
   externalDomain?: string;
   externalOrigin?: string;
   internalOrigin?: string;
