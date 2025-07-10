@@ -22,7 +22,9 @@ export interface ClusterEnvVars {
   externalDomain?: string;
   externalOrigin?: string;
   internalOrigin?: string;
-  contactEmail?: string;
+  supportEmail?: string;
+  legalEmail?: string;
+  copyrightEmail?: string;
 }
 
 export let CLUSTER_ENV_VARS: ClusterEnvVars = {};
