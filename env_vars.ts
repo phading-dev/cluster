@@ -14,6 +14,7 @@ export interface ClusterEnvVars {
   cloudflareAccountIdFile?: string;
   cloudflareR2AccessKeyIdFile?: string;
   cloudflareR2SecretAccessKeyFile?: string;
+  sendgridApiKeyFile?: string;
   timezoneNegativeOffset?: number;
   timezoneIdentifier?: string;
   businessRegion?: string;

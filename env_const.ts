@@ -10,3 +10,4 @@ CLUSTER_ENV_VARS.bigtableZone = "us-central1-a";
 CLUSTER_ENV_VARS.cloudflareAccountIdFile = "cloudflare_account_id";
 CLUSTER_ENV_VARS.cloudflareR2AccessKeyIdFile = "cloudflare_r2_access_key_id";
 CLUSTER_ENV_VARS.cloudflareR2SecretAccessKeyFile = "cloudflare_r2_secret_access_key";
+CLUSTER_ENV_VARS.sendgridApiKeyFile = "send_grid_api_key";

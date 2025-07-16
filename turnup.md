@@ -5,3 +5,5 @@
 1. Go to Cloudflare and get its account id and upload to GCS.
 1. Go to Cloudflare R2 storage and create a token, which generates access key id and secret access key, and upload those to GCS.
 1. Go to Cloudflare and set up several emails routing.
+1. Go to Sendgrid and create an API key and upload the key to GCS.
+1. Go to Sendgrid and under "sender authentication", authenticate the domain.
