@@ -11,3 +11,7 @@ CLUSTER_ENV_VARS.cloudflareAccountIdFile = "cloudflare_account_id";
 CLUSTER_ENV_VARS.cloudflareR2AccessKeyIdFile = "cloudflare_r2_access_key_id";
 CLUSTER_ENV_VARS.cloudflareR2SecretAccessKeyFile = "cloudflare_r2_secret_access_key";
 CLUSTER_ENV_VARS.sendgridApiKeyFile = "send_grid_api_key";
+CLUSTER_ENV_VARS.platformName = "Secount";
+CLUSTER_ENV_VARS.supportEmailName = `${CLUSTER_ENV_VARS.platformName} Support`;
+CLUSTER_ENV_VARS.emailFooterYearAndCompany = "2025 Ykuyo, Inc.";
+CLUSTER_ENV_VARS.emailFooterCompanyAddress = "1111B S Governors Ave STE 3363 Dover, DE 19904";

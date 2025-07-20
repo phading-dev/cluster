@@ -23,7 +23,11 @@ export interface ClusterEnvVars {
   externalDomain?: string;
   externalOrigin?: string;
   internalOrigin?: string;
+  platformName?: string;
+  supportEmailName?: string;
   supportEmail?: string;
+  emailFooterYearAndCompany?: string;
+  emailFooterCompanyAddress?: string;
   legalEmail?: string;
   copyrightEmail?: string;
 }
