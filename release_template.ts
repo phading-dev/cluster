@@ -30,3 +30,6 @@ cbt -project ${CLUSTER_ENV_VARS.projectId} createinstance ${CLUSTER_ENV_VARS.sin
 
 import "./dev/env";
 generate("dev");
+
+import "./prod/env";
+generate("prod");
