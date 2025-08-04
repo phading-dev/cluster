@@ -22,6 +22,7 @@ export interface ClusterEnvVars {
   initCreditAmount?: number;
   externalDomain?: string;
   externalOrigin?: string;
+  externalSynonymDomains?: Array<string>;
   internalOrigin?: string;
   platformName?: string;
   supportEmailName?: string;
