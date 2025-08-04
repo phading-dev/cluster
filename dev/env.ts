@@ -12,6 +12,7 @@ CLUSTER_ENV_VARS.businessRegion = "USA";
 CLUSTER_ENV_VARS.defaultCurrency = "USD";
 CLUSTER_ENV_VARS.initCreditAmount = 100; // Initial credit amount $1
 CLUSTER_ENV_VARS.externalDomain = "dev.secount.com";
+CLUSTER_ENV_VARS.externalSynonymDomains = ["dev-2.secount.com"];
 CLUSTER_ENV_VARS.externalOrigin = "https://" + CLUSTER_ENV_VARS.externalDomain;
 CLUSTER_ENV_VARS.internalOrigin = "http://10.128.15.211"; // Updated after cluster creation
 CLUSTER_ENV_VARS.supportEmail = "support-dev@secount.com";

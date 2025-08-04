@@ -23,7 +23,9 @@ export interface ClusterEnvVars {
   externalDomain?: string;
   externalOrigin?: string;
   externalSynonymDomains?: Array<string>;
+  externalGatewayName?: string;
   internalOrigin?: string;
+  internalGatewayName?: string;
   platformName?: string;
   supportEmailName?: string;
   supportEmail?: string;

@@ -8,6 +8,9 @@ gcloud compute addresses create phading-cluster-external-ip --global --ip-versio
 # Internal IP address
 gcloud compute addresses create phading-cluster-internal-ip --region=us-central1 --subnet=projects/phading-dev/regions/us-central1/subnetworks/default --purpose=GCE_ENDPOINT
 
+# Google-managed SSL certificate
+gcloud compute ssl-certificates create phading-cluster-cert --domains=dev.secount.com,dev-2.secount.com --global
+
 # GKE cluster
 gcloud container clusters create-auto "phading-cluster" --region "us-central1" --release-channel "regular" --network "projects/phading-dev/global/networks/default" --subnetwork "projects/phading-dev/regions/us-central1/subnetworks/default" --cluster-ipv4-cidr "/17" --binauthz-evaluation-mode=DISABLED
 
@@ -20,3 +23,6 @@ gcloud spanner instances create balanced-db-instance --config=regional-us-centra
 
 # Create Bigtable instance
 cbt -project phading-dev createinstance single-instance "single-instance" single-cluster-c1 us-central1-a 1 SSD
+
+# Apply gateway
+kubectl apply -f dev/gateway.yaml
