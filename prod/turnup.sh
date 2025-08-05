@@ -23,6 +23,3 @@ gcloud spanner instances create balanced-db-instance --config=regional-us-centra
 
 # Create Bigtable instance
 cbt -project phading-prod createinstance single-instance "single-instance" single-cluster-c1 us-central1-a 1 SSD
-
-# Apply gateway
-kubectl apply -f prod/gateway.yaml
