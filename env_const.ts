@@ -13,6 +13,7 @@ CLUSTER_ENV_VARS.cloudflareR2SecretAccessKeyFile = "cloudflare_r2_secret_access_
 CLUSTER_ENV_VARS.sendgridApiKeyFile = "send_grid_api_key";
 CLUSTER_ENV_VARS.externalGatewayName = "phading-gateway-external";
 CLUSTER_ENV_VARS.internalGatewayName = "phading-gateway-internal";
+CLUSTER_ENV_VARS.externalSslCertificateName = "phading-cluster-cert";
 CLUSTER_ENV_VARS.platformName = "Secount";
 CLUSTER_ENV_VARS.supportEmailName = `${CLUSTER_ENV_VARS.platformName} Support`;
 CLUSTER_ENV_VARS.emailFooterYearAndCompany = "2025 Ykuyo, Inc.";

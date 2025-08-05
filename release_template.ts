@@ -13,7 +13,7 @@ gcloud compute addresses create ${CLUSTER_ENV_VARS.clusterExternalIpName} --glob
 gcloud compute addresses create ${CLUSTER_ENV_VARS.clusterInternalIpName} --region=${CLUSTER_ENV_VARS.clusterRegion} --subnet=projects/${CLUSTER_ENV_VARS.projectId}/regions/${CLUSTER_ENV_VARS.clusterRegion}/subnetworks/default --purpose=GCE_ENDPOINT
 
 # Google-managed SSL certificate
-gcloud compute ssl-certificates create ${CLUSTER_ENV_VARS.clusterName}-cert --domains=${[CLUSTER_ENV_VARS.externalDomain, ...CLUSTER_ENV_VARS.externalSynonymDomains].join(",")} --global
+gcloud compute ssl-certificates create ${CLUSTER_ENV_VARS.externalSslCertificateName} --domains=${[CLUSTER_ENV_VARS.externalDomain, ...CLUSTER_ENV_VARS.externalSynonymDomains].join(",")} --global
 
 # GKE cluster
 gcloud container clusters create-auto "${CLUSTER_ENV_VARS.clusterName}" --region "${CLUSTER_ENV_VARS.clusterRegion}" --release-channel "regular" --network "projects/${CLUSTER_ENV_VARS.projectId}/global/networks/default" --subnetwork "projects/${CLUSTER_ENV_VARS.projectId}/regions/${CLUSTER_ENV_VARS.clusterRegion}/subnetworks/default" --cluster-ipv4-cidr "/17" --binauthz-evaluation-mode=DISABLED
