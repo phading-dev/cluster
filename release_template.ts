@@ -36,3 +36,6 @@ generate("dev");
 
 import "./prod/env";
 generate("prod");
+
+import "./fan_prod/env";
+generate("fan_prod");

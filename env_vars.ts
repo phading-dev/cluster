@@ -1,3 +1,12 @@
+import { ExchangeRates } from "@phading/price/exchange_rate";
+import { RevenueShares } from "@phading/price/revenue_share";
+import { PlatformPrices } from "@phading/price/platform_price";
+
+export enum PaymentProcessor {
+  STRIPE = "stripe",
+  CCBILL = "ccbill",
+}
+
 export interface ClusterEnvVars {
   projectId?: string;
   projectNumber?: string;
@@ -19,7 +28,15 @@ export interface ClusterEnvVars {
   timezoneIdentifier?: string;
   businessRegion?: string;
   defaultCurrency?: string;
-  initCreditAmount?: number;
+  initCreditCoins?: number;
+  minimumTopUpCoins?: number;
+  topUpFixedFeeCoins?: number;
+  exchangeRates?: ExchangeRates;
+  revenueShares?: RevenueShares;
+  platformPrices?: PlatformPrices;
+  paymentProcessor?: PaymentProcessor;
+  topUpAbandonedAfterMs?: number;
+  fundsHoldingPeriodMs?: number;
   externalDomain?: string;
   externalOrigin?: string;
   externalSynonymDomains?: Array<string>;
