@@ -18,6 +18,7 @@ CLUSTER_ENV_VARS.externalSynonymDomains = ["fandazy.com"];
 CLUSTER_ENV_VARS.externalOrigin = "https://" + CLUSTER_ENV_VARS.externalDomain;
 CLUSTER_ENV_VARS.internalOrigin = "http://10.128.0.2"; // Updated after cluster creation
 CLUSTER_ENV_VARS.platformName = "Fandazy";
+CLUSTER_ENV_VARS.contactEmail = "contact@fandazy.com";
 CLUSTER_ENV_VARS.supportEmail = "support@fandazy.com";
 CLUSTER_ENV_VARS.supportEmailName = `${CLUSTER_ENV_VARS.platformName} Support`;
 // TODO: Update company name and address when a new legal entity is required.
