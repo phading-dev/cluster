@@ -3,7 +3,7 @@ import { CLUSTER_ENV_VARS, PaymentProcessor } from "../env_vars";
 import { AccountGroup, ProductType } from "@phading/price/revenue_share";
 
 CLUSTER_ENV_VARS.projectId = "phading-fan-prod";
-CLUSTER_ENV_VARS.projectNumber = "703213718960";
+CLUSTER_ENV_VARS.projectNumber = "841790998625";
 CLUSTER_ENV_VARS.clusterRegion = "us-central1";
 CLUSTER_ENV_VARS.spannerRegion = "regional-us-central1";
 CLUSTER_ENV_VARS.gcsSecretBucketName = "phading-fan-prod-secrets";
