@@ -14,13 +14,18 @@ CLUSTER_ENV_VARS.defaultCurrency = "USD";
 CLUSTER_ENV_VARS.initCreditCoins = 1000; // Initial credit amount $10
 CLUSTER_ENV_VARS.paymentProcessor = PaymentProcessor.CCBILL;
 CLUSTER_ENV_VARS.externalDomain = "www.fandazy.com";
-CLUSTER_ENV_VARS.externalSynonymDomains = ["fandazy.com"];
+CLUSTER_ENV_VARS.externalSynonymDomains = [
+  "fandazy.com",
+  "smilingfans.com",
+  "www.smilingfans.com",
+];
 CLUSTER_ENV_VARS.externalOrigin = "https://" + CLUSTER_ENV_VARS.externalDomain;
 CLUSTER_ENV_VARS.internalOrigin = "http://10.128.0.2"; // Updated after cluster creation
 CLUSTER_ENV_VARS.platformName = "Fandazy";
+CLUSTER_ENV_VARS.contactEmailName = `${CLUSTER_ENV_VARS.platformName} Contact`;
 CLUSTER_ENV_VARS.contactEmail = "contact@fandazy.com";
-CLUSTER_ENV_VARS.supportEmail = "support@fandazy.com";
 CLUSTER_ENV_VARS.supportEmailName = `${CLUSTER_ENV_VARS.platformName} Support`;
+CLUSTER_ENV_VARS.supportEmail = "support@fandazy.com";
 // TODO: Update company name and address when a new legal entity is required.
 CLUSTER_ENV_VARS.emailFooterYearAndCompany = "2025 Ykuyo, Inc.";
 CLUSTER_ENV_VARS.emailFooterCompanyAddress =

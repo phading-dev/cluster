@@ -22,9 +22,10 @@ CLUSTER_ENV_VARS.externalSynonymDomains = [
 CLUSTER_ENV_VARS.externalOrigin = "https://" + CLUSTER_ENV_VARS.externalDomain;
 CLUSTER_ENV_VARS.internalOrigin = "http://10.128.0.2"; // Updated after cluster creation
 CLUSTER_ENV_VARS.platformName = "Secount";
+CLUSTER_ENV_VARS.contactEmailName = `${CLUSTER_ENV_VARS.platformName} Contact`;
 CLUSTER_ENV_VARS.contactEmail = "contact@secount.com";
-CLUSTER_ENV_VARS.supportEmail = "support@secount.com";
 CLUSTER_ENV_VARS.supportEmailName = `${CLUSTER_ENV_VARS.platformName} Support`;
+CLUSTER_ENV_VARS.supportEmail = "support@secount.com";
 CLUSTER_ENV_VARS.emailFooterYearAndCompany = "2025 Ykuyo, Inc.";
 CLUSTER_ENV_VARS.emailFooterCompanyAddress =
   "1111B S Governors Ave STE 3363 Dover, DE 19904";

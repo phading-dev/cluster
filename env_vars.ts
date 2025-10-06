@@ -45,6 +45,7 @@ export interface ClusterEnvVars {
   internalGatewayName?: string;
   externalSslCertificateName?: string;
   platformName?: string;
+  contactEmailName?: string;
   contactEmail?: string;
   supportEmailName?: string;
   supportEmail?: string;
